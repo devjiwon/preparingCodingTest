@@ -1,0 +1,62 @@
+package study0312;
+
+import java.util.Scanner;
+
+public class Main10819 {
+	
+	static int max = 0;
+
+	public static void main(String args[]) {
+
+		Scanner in = new Scanner(System.in);
+
+		int n = in.nextInt();
+		int[] arr = new int[n];
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = in.nextInt();
+		}
+
+		perm(arr, 0, n, n);
+		System.out.println(max);
+	}
+
+	// 순서 없이 n개 중에서 k개를 뽑는 경우
+	static int perm(int[] arr, int depth, int n, int k) {
+		int result = 0;
+		
+		if (depth == k) { // 한번 depth가 k로 도달하면 사이클이 한번 돌았다는 것을 의미
+			
+			result = cal(arr);
+			
+			if (max < result) {
+				max = result;
+			}										
+			return max;
+		}
+		
+		for (int i = depth; i < n; i++) {
+			swap(arr, depth, i);
+			perm(arr, depth + 1, n, k);
+			swap(arr, depth, i); // 전 단계의 배열의 순서를 기억하고 초기화시킴
+		}
+		return 0;
+	}
+
+	// i번쨰 배열값과 depth번쨰 배열값의 위치 바꾸기
+	static void swap(int[] arr, int depth, int i) {
+		int temp = arr[depth];
+		arr[depth] = arr[i];
+		arr[i] = temp;
+	}
+
+	//계산
+	public static int cal(int[] arr) {
+		int max = 0;
+		for (int i = 0; i < arr.length - 1; i++) {
+			max += Math.abs(arr[i] - arr[i + 1]);
+		}
+		return max;
+	}
+
+}
