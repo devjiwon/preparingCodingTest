@@ -7,15 +7,13 @@ import java.util.Collections;
 import java.lang.Math;
 
 public class Main{
-	//식
-  public static int calculate(int[] arr) {
+	public static int calculate(int[] arr) {
 		int max=0;
 		for(int i=0;i<arr.length-1;i++) {
 			max+=Math.abs(arr[i]-arr[i+1]);
 		}
 		return max;
 	}
-  //permutation() 한 번 실행 시마다 다음 순열을 만듦
 	public static int permutation(int[] perm, int number) {
 		int max = -1;
         for(int i=1; i< number; i++) {
@@ -50,12 +48,10 @@ public class Main{
         
         return result;
 	}
-  //팩토리얼
 	public static int factorial(int n) {
 		if(n==1) return 1;
 		else return n*factorial(n-1);
 	}
-  
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
     	int number = in.nextInt();
@@ -63,12 +59,9 @@ public class Main{
     	for(int i=0; i<number; i++) {
     		arr[i] = in.nextInt();
     	}
-      
-      //순열을 처음부터 만들기 위해 오름차순 소트
     	Arrays.sort(arr);
-      
-      //t : testcase;  
     	int t = factorial(number);
+    	
     	int max=0;
     	for(int i=0; i<t;i++) {
     		int temp = permutation(arr,number);
