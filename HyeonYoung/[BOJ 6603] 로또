@@ -1,0 +1,65 @@
+#include <stdio.h>
+#define MAXK (13 + 5)
+
+int K; // 가지 수(49개 中)
+int S[MAXK]; // 집합 S
+int combi[6]; // 조합(012345, 012346, 012356...)
+
+void BruteForce()
+{
+    for (int l1 = 0; l1 < K; l1++)
+    {
+        for (int l2 = (l1 + 1); l2 < K; l2++)
+        {
+            for (int l3 = (l2 + 1); l3 < K; l3++)
+            {
+                for (int l4 = (l3 + 1); l4 < K; l4++)
+                {
+                    for (int l5 = (l4 + 1); l5 < K; l5++)
+                    {
+                        for (int l6 = (l5 + 1); l6 < K; l6++)
+                        {
+                            printf("%d %d %d %d %d %d\n", S[l1], S[l2], S[l3], S[l4], S[l5], S[l6]);
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+void DFS(int cnt, int start)
+{
+    if (cnt == 6)
+    {
+        for (int i = 0; i < 6; i++)
+            printf("%d ", combi[i]);
+        printf("\n");
+
+        return;
+    }
+
+    for (int idx = start; idx < K; idx++)
+    {
+        combi[cnt] = S[idx];
+        DFS(cnt + 1, idx + 1);
+        combi[cnt] = 0;
+    }
+}
+int main(void)
+{
+    while(1)
+    {
+        scanf("%d", &K);
+
+        if (K == 0) break;
+
+        for (int i = 0; i < K; i++)
+            scanf("%d", &S[i]);
+
+        //BruteForce();
+        DFS(0, 0);
+        printf("\n");
+    }
+    return 0;
+}
