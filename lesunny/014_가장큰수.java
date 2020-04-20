@@ -15,10 +15,10 @@ class Solution {
         Arrays.sort(num,new Comparator<String>(){
             @Override
             public int compare(String s1, String s2){
-                //return -1 : s2
+                //return -1 : 변화 없음
                 //return 0 : 변화 없음
-                //return 1 : s1
-                // A.compareTo(B) : A>B 1, A==B 0, A<B -1
+                //return 1 : s2, s1 자리 바뀜
+                // (s2+s1).compareTo(s1+s2) : s2+s1>s1+s2 1, s2+s1==s1+s2 0, s2+s1<s1+s2 -1
                 return (s2+s1).compareTo(s1+s2);
             }
         });
