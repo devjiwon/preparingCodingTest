@@ -1,4 +1,3 @@
-//효율성 테스트 0
 class Solution {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
