@@ -1,19 +1,24 @@
+import java.util.Arrays;
+
 class Solution {
     public String solution(String[] participant, String[] completion) {
         String answer = "";
         
-        for(int i=0; i<participant.length; i++){
-            for(int j=0; j<completion.length; j++){
-                if(participant[i].equals(completion[j])){
-                    participant[i]="";
-                    completion[j]="";
-                }
-            }
-        }
+        Arrays.sort(participant);
+        Arrays.sort(completion);
         
         for(int i=0; i<participant.length; i++){
-            answer+=participant[i];
+            if(i<participant.length-1){
+                if (participant[i].equals(completion[i]))
+                    continue;
+                else{
+                    answer+=participant[i];
+                    break;
+                }
+            }else
+                answer+=participant[i];
         }
+        
         
         return answer;
     }
