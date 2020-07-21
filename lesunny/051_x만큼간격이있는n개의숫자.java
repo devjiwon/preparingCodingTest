@@ -1,12 +1,10 @@
 class Solution {
     public long[] solution(int x, int n) {
         long[] answer = new long[n];
-        int idx = 0;
-        answer[idx++] = x;
+        answer[0] = x;
         
-        while(idx<n){
-            answer[idx] = answer[idx-1]+x;
-            idx++;
+        for(int i=1; i<n; i++){
+            answer[i] = (long)x * (i+1);
         }
         return answer;
     }
