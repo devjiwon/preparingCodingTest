@@ -1,4 +1,3 @@
-//테스트케이스 5,7 실패
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = 0;
@@ -8,6 +7,18 @@ class Solution {
         for(int i=1; i<=n; i++)
             flags[i] = 1;
         
+        //lost와 reseve가 같을 때
+        for(int i=0; i<lost.length; i++){
+            for(int j=0; j<reserve.length; j++){
+                if(lost[i]==reserve[j]){
+                    flags[lost[i]] = -2;
+                    answer++;
+                    break;
+                }                    
+            }
+        }
+        
+        //빼기
         for(int i=0; i<lost.length; i++)
             flags[lost[i]] -= 1;
         
@@ -24,16 +35,12 @@ class Solution {
             }
         }
         
-        
-        
         for(int i=1; i<n+1; i++){
             System.out.print(flags[i]+" ");
             if(flags[i]>0)
                 answer++;
         }    
-        
-        
-        
+            
         return answer;
     }
 }
