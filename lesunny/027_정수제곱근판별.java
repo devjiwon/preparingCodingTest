@@ -7,8 +7,6 @@ class Solution {
         
         if(temp - (int)temp > 0)
             answer = -1;
-        else if(Double.isNaN(temp))
-            answer = -1;
         else
             answer = (long)Math.pow(temp+1,2);
         
