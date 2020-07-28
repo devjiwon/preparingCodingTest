@@ -9,7 +9,7 @@ class Solution {
             x /= 10;
         }
         
-        double result = dx%(double)sum;
+        double result = dx%sum;
         
         if(result != 0) answer = false;
         
