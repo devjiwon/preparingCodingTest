@@ -14,7 +14,7 @@ class Solution {
                 min = Math.min(min, arr[i]);
             }
             int idx=0;
-            for(int i=0; i<length-1; i++){
+            for(int i=0; i<length; i++){
                 if(min != arr[i])
                     answer[idx++] = arr[i];
             }
