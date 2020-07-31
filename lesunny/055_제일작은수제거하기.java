@@ -9,7 +9,7 @@ class Solution {
         }else{
             answer = new int[length-1];
             
-            int min = 100;
+            int min = 10000;
             for(int i=0; i<length; i++){
                 min = Math.min(min, arr[i]);
             }
