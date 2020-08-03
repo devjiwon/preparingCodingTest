@@ -1,0 +1,4 @@
+import java.util.Arrays; 
+public class solution{ 
+    public String s(String[] seoul){ 
+        return "김서방은 "+ Arrays.asList(seoul).indexOf("Kim") + "에 있다"; }
