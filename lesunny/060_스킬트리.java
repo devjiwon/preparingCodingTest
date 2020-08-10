@@ -19,6 +19,7 @@ class Solution {
                     continue;
                 }else{
                     flag = false;
+                    break;
                 }
             }
             if(flag==true)
