@@ -1,28 +1,25 @@
 #include <string>
 #include <vector>
-
 using namespace std;
-int check[27];
-vector<int> a[27];
+
 int solution(string skill, vector<string> skill_trees) {
     int answer = 0;
+    int ranking[27] = {0,};
     for(int i=0;i<skill.length();i++){
-        check[skill[i] - 'A'] = i+1;
+        ranking[skill[i]-'A']=i+1;
     }
-    int temp = 0;
     for(int i=0;i<skill_trees.size();i++){
-        int temp = 0;
         string now = skill_trees[i];
+        bool pass = true;
         int pos = 1;
         for(int j=0;j<now.length();j++){
-            if(check[now[j]-'A']!=0){
-                if(check[now[j]-'A'] == pos) {
-                    pos++;
-                } else temp = -1;
-            }
+            if (ranking[now[j]-'A']==0) continue;
+            if (ranking[now[j]-'A']==pos){
+                pos++;
+            } else pass = false;
         }
-        if (temp == 0) answer++;
+        
+        if (pass) answer++;
     }
-    
     return answer;
 }
