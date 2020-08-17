@@ -6,8 +6,9 @@
 - 저장 이름 예시 : "Baekjoon/아이디/001 일곱 난쟁이"
 
 - ~ 03-30 : https://code.plus/course/32
-- 03-30~ : https://programmers.co.kr/learn/challenges?tab=all_challenges
-- 매주 프로그래머스 2-3단계 2~3문제 선택해서 올릴 예정 (공통 언어 : C, C++, Java)
+- 03-30 ~ : https://programmers.co.kr/learn/challenges?tab=all_challenges
+- 08-17 ~ : 백준 + 
+- 매주 프로그래머스 2-3단계 2~3문제 선택해서 올릴 예정 (공통 언어 : C++, Java)
 - 출제 빈도별 알고리즘 참고
   - 높음 : 완전탐색(Brute Force), 깊이/너비 우선 탐색(DFS/BFS), 정렬, 해시
   - 보통 : 스택/큐, 힙(Heap)
@@ -166,4 +167,13 @@
 062 멀쩡한 사각형
 063 카카오프렌즈 컬러링북
 064 문자열 압축
+```
+
+- 20-08-24 (MON)
+```
+065 수 정렬하기 (백준)
+066 수 정렬하기 2 (백준)
+067 수 정렬하기 3 (백준)
+068 통계학 (백준)
+069 H-Index (프로그래머스)
 ```
