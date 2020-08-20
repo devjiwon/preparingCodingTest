@@ -39,7 +39,7 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
 				number_of_area++;
 
 				if (sum > max_size_of_one_area) max_size_of_one_area = sum;
-            }
+            		}
 		}
 	}
 
