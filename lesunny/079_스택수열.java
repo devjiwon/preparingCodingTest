@@ -22,30 +22,22 @@ public class Main{
 		int idx = 0;
 		int inputIdx = 0;
 		boolean flag = false;
-		int full = 0;
 		while(idx<seq.length){
 		    if(!stack.isEmpty() && seq[idx]==stack.peek()){
 			if(idx==seq.length-1){
 			    flag=true;
 			}
 			stack.pop();
-			//System.out.println("pop "+idx);
 
 			idx++;
 			answer.add("-");
 		    }else{
 			if(inputIdx!=N){
-			    //System.out.println("push "+inputArr[inputIdx]);
-
 			    stack.push(inputArr[inputIdx]);
 			    inputIdx++;
 			}
 			else if(inputIdx==N){
-			    if(full>0){
-				break;
-			    }
-			    full++;   
-			    continue;
+			    break;
 			}
 			answer.add("+");
 		    }
