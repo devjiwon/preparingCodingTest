@@ -42,7 +42,7 @@ public class Main {
 		for(int i=0; i<n; i++) {
 			for(int j=0; j<m; j++) {
 				answer = Math.max(answer, visited[i][j]);
-				if(visited[i][j]==0 && tomatoes[i][j]==0) {
+				if(tomatoes[i][j]==0) {
 					return -1;
 				}
 			}
